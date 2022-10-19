@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./movie.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+<script src="./js/jquery-3.6.1.min.js"></script>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+<script src="./js/move.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <header>
+            <div class="wrap">
+                <h1><a href="./movie-comp.html">Cinema Insight</a></h1>
+                <div class="util">
+                    <div class="auth">
+                        <div class="login"><a href="#">Login</a></div>
+                        <div class="join"><a href="#">Join</a></div>
+                    </div>
+                    <div class="viewmode">
+                        <button class="day">
+                            <span class="day material-symbols-outlined">light_mode</span>
+                            <span class="night material-symbols-outlined">nightlight</span>
+                        </button>
+                        <script>
+                            $(".viewmode").on("click", function() {
+                                $(this).find("button").toggleClass("day")
+                                $(this).find("button").toggleClass("night")
+                            })
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="main-visual">
+            <p>Millions of movies, TV shows and people to discover</p>
+            <h2>Explore now.</h2>
+            <form action="">
+                <input type="text">
+            </form>
+        </div>
+        <main>
+            <section class="s1">
+                <div class="wrap">
+                    <h3>Featured Today</h3>
+                    <div class="swiper content">
+                        <div class="swiper-wrapper">
+                            
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    const slider = new Swiper(".content", {
+                        "slidesPerView" : 6,
+                        "spaceBetween" : 20,
+                        "loop" : true
+                    });
+                </script>
+            </section>
+        </main>
+        <div class="information">
+            <div class="wrap">
+                <div class="close">
+                    <button style="background-color: yellow">close</button>
+                </div>
+                <div class="title">asda asdsad</div>
+                <div class="thumb"></div>
+                <div class="info">
+                    <div class="release">e</div>
+                    <div class="summary comp">
+                    </div>
+                    <div class="genre">123123</div>
+                </div>
+            </div>
+            <script>
+                $(".information .summary a").on("click", function(e) {
+                    e.preventDefault();
+                    $(".information .summary").toggleClass("comp");
+                    let view = $(".information .summary").hasClass("comp");
+                    view ? $(this).text("더보기") : $(this).text("닫기")
+                });
+            </script>
+        </div>
+    </div>
+    <footer>
+        <h2>Cinema Insight</h2>
+        <p>
+            (C) 2022. Geon Ryu. All rights reserved. 
+        </p>
+    </footer>
+</body>
+</html>

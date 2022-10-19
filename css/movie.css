@@ -1,0 +1,285 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ol, ul{list-style: none;}
+a{color: inherit; text-decoration: none;}
+img{vertical-align: top; max-width: 100%; display: block;}
+button,input,select,option{border: 0; background-color: rgba(0,0,0,0);}
+/* font-family: 'Lobster', cursive; */
+/* font-family: 'Noto Sans KR', sans-serif; */
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.wrap{
+    max-width: 1320px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+    height: 100%;
+}
+header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 60px;
+    border-bottom: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .wrap{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1{
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Lobster', cursive;
+    font-weight: 100;
+}
+header .util{
+    display: flex;
+    align-items: center;
+}
+header .util .auth{
+    margin-right: 36px;
+    display: flex;
+    align-items: center;
+}
+header .util .auth .login{
+    margin-right: 18px;
+}
+header .util .auth .join{}
+header .util .auth div a{
+    color: #fff;
+}
+header .util .viewmode{}
+header .util .viewmode button{
+    width: 40px;
+    height: 40px;
+    display: block;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    position: relative;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+header .util .viewmode button.day{transform: rotate(0);}
+header .util .viewmode button.night{transform: rotate(180deg);}
+header .util .viewmode button:hover{background-color: rgba(255,255,255,0.2);}
+header .util .viewmode button span{
+    display: block;
+    transition: all 0.3s;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 200;
+    font-size: 22px;
+}
+header .util .viewmode button.day span.night{ opacity: 0;}
+header .util .viewmode button span.night{transform: translate(-50%, -50%) rotate(-180deg);}
+header .util .viewmode button.night span.day{opacity: 0;}
+
+.main-visual{
+    height: 400px;
+    background: rgb(63,209,188);
+    background: linear-gradient(45deg, rgba(63,209,188,1) 0%, rgba(72,132,219,1) 50%, rgba(235,200,221,1) 100%);
+    background-size: 120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 36px;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+}
+.main-visual p{
+    color: #fff;
+    font-size: 24px;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.05)
+}
+.main-visual h2{
+    color: #fff;
+    font-size: 42px;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.05)
+}
+
+.main-visual form{
+    width: 100%;
+}
+.main-visual form input{
+    display: block;
+    margin: 0 auto;
+    border: 1px solid #fff;
+    width: 100%;
+    max-width: 800px;
+    height: 50px;
+    border-radius: 500px;
+    margin-top: 40px;
+    background-color: rgba(255,255,255,0.2);
+    text-align: center;
+    font-size: 24px;
+}
+
+main{
+    padding: 80px 0 100px;
+}
+
+main h3{
+    font-family: 'Lobster', cursive;
+    font-weight: normal;
+    color: dodgerblue;
+    font-size: 24px;
+    text-align: center;
+}
+
+main section{
+    padding: 20px 0;
+}
+
+main section .content{
+   padding: 40px 0 0;
+}
+
+main section .content .swiper-slide{
+    position: relative;
+}
+main section .content .swiper-slide .rank.first{
+    background-color: rgb(255, 179, 0);
+}
+main section .content .swiper-slide .rank{
+    color: #fff;
+    text-shadow: 3px 3px 3px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 20px;
+    color: #fff;
+    z-index: 99999;
+    font-size: 24px;
+    background-color: rgba(0,0,0,0.5);
+}
+main section .content .swiper-slide .poster{
+    overflow: hidden; border-radius: 16px; box-shadow: 3px 3px 3px rgba(0,0,0,0.3);
+    position: relative;
+}
+main section .content .swiper-slide .poster img{transition: transform 5s;}
+main section .content .swiper-slide .poster:hover img{transform: scale(1.1);}
+main section .content .swiper-slide .poster .rating{
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 14;
+    color: #fff;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    border: 1px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main section .content .swiper-slide .info{
+    padding: 16px 8px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+}
+main section .content .swiper-slide .info .title{
+    font-size: 20px;
+    font-weight: 500;
+}
+main section .content .swiper-slide .info .release{
+    color: #888;
+    font-weight: 100;
+}
+main section .content .swiper-slide .info .genre{
+    display: flex;
+    color: #666;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 12px;
+}
+
+.information{
+    display: none;
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.information .title{
+    font-size: 36px;
+    text-align: center;
+    padding: 40px 0;
+    color: #fff;
+    font-weight: 600;
+}
+.information .thumb{
+    height: 400px;
+    position: relative;
+}
+.information .thumb::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 150px;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.information .thumb img{
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+    object-fit: cover;
+}
+.information .info{
+    background-color: rgba(0,0,0,0.7);
+    padding: 30px;
+    color: #fff;
+}
+.information .info > div{margin-bottom: 12px;}
+.information .info > div:last-child{margin-bottom: 0;}
+.information .info .summary.comp span{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; 
+}
+.information .info .summary{
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+.information .info .release{}
+.information .info .genre{}
+.information .info .actors{}
+
+footer{
+    background-color: rgb(49, 68, 119);
+    color: #fff;
+    text-align: center;
+    padding: 40px 0 80px;
+}
+footer h2{
+    font-family: 'Lobster', cursive;
+    font-size: 24px;
+    font-weight: normal;
+}
+
+footer p{
+    color: #d5d5d5;
+    margin-top: 15px;
+}
